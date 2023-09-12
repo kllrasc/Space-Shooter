@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmu8272up78ql"]
+
+[ext_resource type="Script" path="res://Player/Player.gd" id="1_rwye6"]
+[ext_resource type="Texture2D" uid="uid://dh4bftgbtoa4y" path="res://Assets/guy.png" id="2_ioxm3"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(512, 300)
+script = ExtResource("1_rwye6")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+texture = ExtResource("2_ioxm3")
