@@ -1,6 +1,6 @@
 # Space-Shooter
-September 12, 2023
-Game exploring through a new town and unlocking new achievements.
+September 15, 2023
+
 
 ## Implementation
 
