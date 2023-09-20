@@ -1,18 +1,28 @@
-[gd_scene load_steps=3 format=3 uid="uid://cmu8272up78ql"]
+[gd_scene load_steps=5 format=3 uid="uid://cmu8272up78ql"]
 
+[ext_resource type="Script" path="res://Player_Container.gd" id="1_762uo"]
 [ext_resource type="PackedScene" uid="uid://cef0mwyv6qe35" path="res://player.tscn" id="1_ae44x"]
 [ext_resource type="PackedScene" uid="uid://ccxjwp3fnmg6h" path="res://asteroid.tscn" id="2_427ts"]
+[ext_resource type="PackedScene" uid="uid://bj3e6ueuhxx08" path="res://enemy.tscn" id="3_rtt2r"]
 
 [node name="Game" type="Node2D"]
 
+[node name="Player_Container" type="Node2D" parent="."]
+script = ExtResource("1_762uo")
+
 [node name="Player" parent="." instance=ExtResource("1_ae44x")]
 
-[node name="Asteroid_Container" type="Node2D" parent="."]
+[node name="Asteroid_Container" type="Node2D" parent="Player"]
 
-[node name="Asteroid" parent="Asteroid_Container" instance=ExtResource("2_427ts")]
+[node name="Asteroid" parent="Player/Asteroid_Container" instance=ExtResource("2_427ts")]
 position = Vector2(100, 100)
 
-[node name="Asteroid2" parent="Asteroid_Container" instance=ExtResource("2_427ts")]
+[node name="Asteroid2" parent="Player/Asteroid_Container" instance=ExtResource("2_427ts")]
 position = Vector2(900, 600)
 
 [node name="Effects" type="Node2D" parent="."]
+
+[node name="Enemy_Container" type="Node2D" parent="."]
+
+[node name="Enemy" parent="Enemy_Container" instance=ExtResource("3_rtt2r")]
+position = Vector2(400, 100)
