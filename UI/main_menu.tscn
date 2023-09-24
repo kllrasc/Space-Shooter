@@ -1,0 +1,63 @@
+[gd_scene load_steps=4 format=3 uid="uid://dap7168k3o08r"]
+
+[ext_resource type="Script" path="res://UI/main_menu.gd" id="1_vlbd4"]
+[ext_resource type="FontFile" uid="uid://byy6j37p5o2x6" path="res://Assets/Assets/Hyperspace.otf" id="2_othfy"]
+[ext_resource type="FontFile" uid="uid://cdeyhhfrba5m7" path="res://Assets/Assets/Hyperspace Bold.otf" id="3_owcni"]
+
+[node name="Main_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vlbd4")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -248.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_othfy")
+theme_override_font_sizes/font_size = 50
+text = "Welcome to the space shooter"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Play" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 476.0
+offset_top = 304.0
+offset_right = -476.0
+offset_bottom = -304.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_owcni")
+theme_override_font_sizes/font_size = 20
+text = "Play"
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 476.0
+offset_top = 364.0
+offset_right = -476.0
+offset_bottom = -244.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_owcni")
+theme_override_font_sizes/font_size = 20
+text = "Quit
+"
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

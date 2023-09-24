@@ -27,11 +27,8 @@ func _physics_process(_delta):
 	velocity += get_input()*speed
 	velocity = velocity.normalized() * clamp(velocity.length(), 0, max_speed)
 	
-	
-	if position.x > 1152:
-		position.x = 0
-	if position.y > 648:
-		position.y = 0
+	position.x = wrapf(position.x, 0, Global.vp.x)
+	position.y = wrapf(position.y, 0, Global.vp.y)
 	velocity = velocity.normalized() * clamp(velocity.length(), 0, max_speed)
 	
 	move_and_slide()
@@ -53,7 +50,7 @@ func damage(d):
 			explosion.global_position = global_position
 			hide()
 			await explosion.animation_finished
-			
+		Global.update_lives(-1)
 		queue_free()
 	
 
